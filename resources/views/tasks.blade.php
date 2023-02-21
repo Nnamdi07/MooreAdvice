@@ -12,6 +12,11 @@
                 @endforeach
             </ul>
         </div>
+        <div class="form-group m-3">
+            <form method="GET" action="create">
+                <input value="Create Todo" class="btn btn-primary float-end" type="submit"/>
+            </form>
+            </div>
     </div>
         </div>
     </div>
