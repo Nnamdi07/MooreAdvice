@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,19 +21,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/tasks', [App\Http\Controllers\HomeController::class, 'tasks'])->name('tasks');
-
 
 Route::get('/', [TodoController::class, 'index']);
 
-Route::get('tasks', [TodoController::class, 'tasks']);
-Route::get('create', [TodoController::class, 'create']);
-
-Route::get('details/{todo}', [TodoController::class, 'details']);
-Route::get('edit/{todo}', [TodoController::class, 'edit']);
-Route::post('update/{todo}', [TodoController::class, 'update']);
-
-Route::get('delete/{todo}', [TodoController::class, 'delete']);
-
-Route::post('store-data', [TodoController::class, 'store']);
+Route::get('docs', [FormController::class, 'tasks']);
+Route::post('doc-data', [FormController::class, 'store']);
+Route::get('form', [FormController::class, 'forms']);
+Route::post('form-data', [FormController::class, 'form_store']);
+Route::get('success', [FormController::class, 'success']);
